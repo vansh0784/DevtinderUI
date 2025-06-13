@@ -10,6 +10,7 @@ import Connections from "./components/Connections"
 import EditProfile from "./components/EditProfile";
 import Requests from "./components/Requests";
 import Chat from "./components/Chat";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
 
         <Routes >
           <Route path="/" element={<Body/>}>
+          <Route  index element={<Home/>}></Route>
             <Route path="/feed" element={<Feed/>}></Route>
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/signup" element={<Signup/>}></Route>

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router";
-
+import { Link } from "react-router";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -153,6 +153,10 @@ const Signup = () => {
             <button type="submit" className="btn btn-primary w-full">
               Sign Up
             </button>
+          </div>
+          <div>
+            <Link to="/login">
+            <p className="text-blue-500 font-md text-lg cursor-pointer text-center">Account Exists? Login now</p></Link>
           </div>
         </form>
       </div>
