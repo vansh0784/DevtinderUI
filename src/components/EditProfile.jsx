@@ -15,7 +15,7 @@ const EditProfile = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:4000/edit/Profile",
+        "https://devtinder-b42n.onrender.com/edit/Profile",
         { firstName, lastName, About },
         { withCredentials: true }
       );

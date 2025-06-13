@@ -7,7 +7,7 @@ const Navbar = () => {
   const navigate=useNavigate();
   const handleLogout=async()=>{
     try{
-      await axios.post("http://localhost:4000/logout",{
+      await axios.post("https://devtinder-b42n.onrender.com/logout",{
         withCredentials:true,
       });
       dispatch(deleteUser());

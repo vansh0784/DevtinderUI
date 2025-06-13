@@ -11,7 +11,7 @@ const Requests = () => {
   const handleRequest = async () => {
     try {
       const req = await axios.get(
-        "http://localhost:4000/user/request/recieved",
+        "https://devtinder-b42n.onrender.com/user/request/recieved",
         {
           withCredentials: true,
         }

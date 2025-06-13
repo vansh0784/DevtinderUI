@@ -8,7 +8,7 @@ const Usercard = ({ card }) => {
   const handleProfileRequest = async (status, userId) => {
     try {
       const res = await axios.post(
-        `http://localhost:4000/connection/${status}/${userId}`,
+        `https://devtinder-b42n.onrender.com/connection/${status}/${userId}`,
         {},
         {
           withCredentials: true,
