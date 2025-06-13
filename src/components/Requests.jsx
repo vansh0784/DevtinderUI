@@ -11,7 +11,7 @@ const Requests = () => {
   const handleRequest = async () => {
     try {
       const req = await axios.get(
-        "http://localhost:3000/user/request/recieved",
+        "http://localhost:4000/user/request/recieved",
         {
           withCredentials: true,
         }

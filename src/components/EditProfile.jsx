@@ -15,7 +15,7 @@ const EditProfile = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:3000/edit/Profile",
+        "http://localhost:4000/edit/Profile",
         { firstName, lastName, About },
         { withCredentials: true }
       );

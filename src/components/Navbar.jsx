@@ -7,7 +7,7 @@ const Navbar = () => {
   const navigate=useNavigate();
   const handleLogout=async()=>{
     try{
-      await axios.post("http://localhost:3000/logout",{
+      await axios.post("http://localhost:4000/logout",{
         withCredentials:true,
       });
       dispatch(deleteUser());

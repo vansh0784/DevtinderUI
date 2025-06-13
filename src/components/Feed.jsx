@@ -10,7 +10,7 @@ const Feed = () => {
     const getFeed=async()=>{
         if(feed) return;
         try{
-            const res=await axios.get("http://localhost:3000/feed",{
+            const res=await axios.get("http://localhost:4000/feed",{
                 withCredentials:true,
             })
             console.log(res);

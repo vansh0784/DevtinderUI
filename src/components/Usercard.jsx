@@ -8,7 +8,7 @@ const Usercard = ({ card }) => {
   const handleProfileRequest = async (status, userId) => {
     try {
       const res = await axios.post(
-        `http://localhost:3000/connection/${status}/${userId}`,
+        `http://localhost:4000/connection/${status}/${userId}`,
         {},
         {
           withCredentials: true,
