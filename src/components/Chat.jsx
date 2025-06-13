@@ -18,40 +18,48 @@ const Chat = () => {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    if (!userId || !connectionId) return;
+  if (!userId || !connectionId) return;
 
-    const sock = createSocketConnection();
-    setSocket(sock);
+  const sock = createSocketConnection();
+  setSocket(sock);
 
-    sock.on("connect", () => {
-      console.log("Connected to socket:", sock.id);
-      sock.emit("joinChat", {
-        firstName: user?.firstName,
-        userId,
-        connectionId,
-      });
-    });
-
-    sock.on("messageRecieved", ({ firstName, text }) => {
-      if (text) setMessages((msg) => [...msg, { firstName, text }]);
-    });
-
-    return () => {
-      sock.disconnect();
-    };
-  }, [userId, connectionId]);
-
-  const sendMessage = () => {
-    if (!newMessage.trim() || !socket) return;
-    socket.emit("sendMessage", {
+  sock.on("connect", () => {
+    console.log("Connected to socket:", sock.id);
+    sock.emit("joinChat", {
       firstName: user?.firstName,
-      text: newMessage,
       userId,
       connectionId,
     });
-    setMessages((msg) => [...msg, { firstName: user.firstName, text: newMessage }]);
-    setNewMessage("");
+  });
+
+  sock.on("messageRecieved", ({ firstName, text, userId: senderId }) => {
+    // Avoid showing the message again if the current user sent it
+    if (!text || senderId === userId) return;
+
+    setMessages((msg) => [...msg, { firstName, text }]);
+  });
+
+  return () => {
+    sock.disconnect();
   };
+}, [userId, connectionId]);
+
+const sendMessage = () => {
+  if (!newMessage.trim() || !socket) return;
+
+  // Add own message immediately to UI
+  setMessages((msg) => [...msg, { firstName: user.firstName, text: newMessage }]);
+
+  socket.emit("sendMessage", {
+    firstName: user?.firstName,
+    text: newMessage,
+    userId,
+    connectionId,
+  });
+
+  setNewMessage("");
+};
+
 
   const fetchConnections = async () => {
     try {
