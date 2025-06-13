@@ -55,6 +55,9 @@ const Navbar = () => {
                 <Link to="/recieved/requests">All Requests</Link>
               </li>
               <li className="mt-1">
+                <Link to="/chat/:connectionId">Chat</Link>
+              </li>
+              <li className="mt-1">
                 <a onClick={handleLogout}>Logout</a>
               </li>
             </ul>
