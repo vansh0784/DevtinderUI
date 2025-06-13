@@ -15,15 +15,12 @@ const Body = () => {
       const res=await axios.get("https://devtinder-b42n.onrender.com/profile",{
         withCredentials:true
       });
-      // console.log(res);
-      // console.log(res.data);
       dispatch(addUser(res.data))
     }
     catch(err){
       if(err.status==401){
         navigate("/home");
       }
-      console.error(err);
     }
   }
   useEffect(()=>{
