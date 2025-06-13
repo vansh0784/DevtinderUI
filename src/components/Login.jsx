@@ -4,8 +4,8 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { useNavigate,Link } from "react-router";
 const Login = () => {
-    const [email,setEmail]=useState("abhi123@gmail.com");
-    const [password,setPassword]=useState("Abhi@123");
+    const [email,setEmail]=useState("kunal123@gmail.com");
+    const [password,setPassword]=useState("Kunal@123");
     const dispatch=useDispatch();
     const navigate=useNavigate();
     const handleSubmit=async(e)=>{

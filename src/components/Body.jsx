@@ -10,11 +10,13 @@ const Body = () => {
   const dispatch=useDispatch();
   const userData=useSelector(store=>store.user);
   const fetchUser=async()=>{
+    console.log("fetchUser called");
     try{
       if(userData===true) return;
       const res=await axios.get("https://devtinder-b42n.onrender.com/profile",{
         withCredentials:true
       });
+      console.log(res);
       dispatch(addUser(res.data))
     }
     catch(err){
