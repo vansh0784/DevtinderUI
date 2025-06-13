@@ -26,7 +26,7 @@ const Signup = () => {
         withCredentials: true,
       });
       if(res.status==200){
-        navigate("/login");
+        navigate("/feed");
       }
       console.log("Signup successful:", res.data);
     } catch (error) {
