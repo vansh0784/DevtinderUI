@@ -12,7 +12,7 @@ const Body = () => {
   const fetchUser=async()=>{
     try{
       if(userData===true) return;
-      const res=await axios.get("http://localhost:4000/profile",{
+      const res=await axios.get("https://devtinder-b42n.onrender.com//profile",{
         withCredentials:true
       });
       // console.log(res);
