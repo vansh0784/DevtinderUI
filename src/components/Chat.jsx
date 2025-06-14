@@ -4,7 +4,7 @@ import { createSocketConnection } from "../utils/socket";
 import { useSelector, useDispatch } from "react-redux";
 import { allConnect } from "../utils/allConnections";
 import axios from "axios";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
