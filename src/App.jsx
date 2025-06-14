@@ -11,6 +11,7 @@ import EditProfile from "./components/EditProfile";
 import Requests from "./components/Requests";
 import Chat from "./components/Chat";
 import Home from "./components/Home";
+import UserHome from "./components/UserHome";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/editProfile" element={<EditProfile/>}></Route>
             <Route path="/Signup" element={<Signup/>}></Route>
             <Route path="/chat/:connectionId" element={<Chat/>}></Route>
+            <Route path="/user/home" element={<UserHome/>}></Route>
           </Route>
         </Routes>
     </>

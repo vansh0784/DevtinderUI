@@ -19,7 +19,7 @@ const Login = () => {
             });
             console.log(result.data.data);
             dispatch(addUser(result.data.data));
-            return navigate("/feed");
+            return navigate("/user/home");
         }
         catch(e){
             console.error(e);

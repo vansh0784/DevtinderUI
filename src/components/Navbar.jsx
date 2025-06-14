@@ -25,6 +25,7 @@ const Navbar = () => {
         </div>
         <div className={`flex items-center justify-center gap-4 font-semibold text-slate-800 text-md w-6/12 `}>
               <Link to="/connections">Connections</Link>
+               <Link to="/feed">Feed</Link>
 
               <Link to="/recieved/requests">All Requests</Link>
               <Link to="/chat/:connectionId">Chat</Link>
