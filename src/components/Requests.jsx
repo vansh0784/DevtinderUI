@@ -25,7 +25,7 @@ const Requests = () => {
   const requestReview=async(status,id)=>{
     try{
         // at post when you don't pass any data pass empty{} otherwise it will create problem
-        const req=await axios.post(`https://devtinder-b42n.onrender.com/request/review/${status}/${id}`,{},{
+        const req=await axios.post(`https://devtinder-b42n.onrender.com/user/request/review/${status}/${id}`,{},{
             withCredentials:true,
         });
         console.log(req);
