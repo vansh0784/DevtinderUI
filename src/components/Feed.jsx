@@ -10,7 +10,7 @@ const Feed = () => {
     const getFeed=async()=>{
         if(feed) return;
         try{
-            const res=await axios.get("https://devtinder-b42n.onrender.com/feed",{
+            const res=await axios.get("https://devtinder-b42n.onrender.com/user/feed",{
                 withCredentials:true,
             })
             console.log(res);
