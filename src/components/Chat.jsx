@@ -9,7 +9,7 @@ import { Link } from "react-router";
 const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
-  const { connectionId } = useParams(); // from URL: /chat/:connectionId
+  const { connectionId } = useParams();
   const user = useSelector((state) => state.user);
   const myConnections = useSelector((state) => state.connections);
   const dispatch = useDispatch();
@@ -87,22 +87,6 @@ const Chat = () => {
       {/* Header + Friend Selector */}
       <div className="p-4 border-b bg-gray-100 flex justify-between items-center">
         <h1 className="text-xl font-bold">Chat Room</h1>
-        <select
-          className="border px-3 py-1 rounded focus:outline-none text-sm"
-          value={connectionId}
-          onChange={(e) => navigate(`/chat/${e.target.value}`)}
-        >
-          <option disabled value="">
-            Select a friend
-          </option>
-          {myConnections.map((con) => (
-            <Link to={`/chat/${con?._id}`}>
-            <option key={con._id} value={con._id}>
-              {con.firstName} {con.lastName}
-            </option>
-            </Link>
-          ))}
-        </select>
       </div>
 
       {/* Chat Messages Area */}
