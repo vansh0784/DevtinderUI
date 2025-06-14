@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate} from "react-router-dom";
 import { createSocketConnection } from "../utils/socket";
 import { useSelector, useDispatch } from "react-redux";
 import { allConnect } from "../utils/allConnections";
