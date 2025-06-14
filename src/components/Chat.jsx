@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router";
+import { useParams, useNavigate, Link } from "react-router";
 import { createSocketConnection } from "../utils/socket";
 import { useSelector, useDispatch } from "react-redux";
 import { allConnect } from "../utils/allConnections";
 import axios from "axios";
+import { Link } from "react-router";
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
@@ -95,9 +96,11 @@ const Chat = () => {
             Select a friend
           </option>
           {myConnections.map((con) => (
+            <Link to={`/chat/${con?._id}`}>
             <option key={con._id} value={con._id}>
               {con.firstName} {con.lastName}
             </option>
+            </Link>
           ))}
         </select>
       </div>
